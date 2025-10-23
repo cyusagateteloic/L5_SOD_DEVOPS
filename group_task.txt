@@ -1,0 +1,76 @@
+Learning Git commands is one of the most valuable skills for working on projects — especially when collaborating with others.
+
+Here’s a quick summary of the essential Git commands  we study (and what they do):
+
+🧭 Setup:
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+Sets your Git identity (used in commits).
+
+📦 Repository basics
+git init
+
+
+Creates a new Git repository in your folder.
+
+git clone <repository-url>
+
+
+Downloads (clones) an existing repository from GitHub.
+
+✏️ Making changes
+git status
+
+
+Shows what’s changed since the last commit.
+
+git add <filename>
+
+
+Stages a file for commit.
+
+git commit -m "Describe your changes"
+
+
+Saves a snapshot of your changes.
+
+🚀 Sharing changes
+git push origin main
+
+
+Uploads your commits to GitHub (replace main with your branch name if different).
+
+git pull origin main
+
+
+Updates your local copy with the latest changes from GitHub.
+
+🌿 Branches
+git branch
+
+
+Lists your branches.
+
+git checkout -b new-feature
+
+
+Creates and switches to a new branch.
+
+git merge new-feature
+
+
+Combines changes from another branch into your current one.
+
+🧹 Undoing changes
+git restore <filename>
+
+
+Discards changes in a file that you haven’t committed yet.
+
+git reset --hard HEAD
+
+
+Resets everything to the last commit (be careful — this can’t be undone!).
+
+Would you like me to give you a small practical exercise to practice Git commands step-by-step?
