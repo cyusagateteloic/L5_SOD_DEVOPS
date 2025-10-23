@@ -1,0 +1,76 @@
+Q1.What is the purpose of the .git directory?
+
+The .git directory is the core of the repository. It stores all the necessary information for Git
+to track the project's history, including object data (files), pointers to commits, branches, tags,
+configuration settings, and the commit history itself. It is the entire version control system for your
+project.
+
+Q2.Explain the difference between git pull and git fetch.
+
+--> git fetch retrieves the latest changes from the remote repository (e.g., GitHub) but does
+not integrate them into your local working branch. It only updates the remote tracking
+branches (e.g., origin/main).
+--> git pull is essentially a combination of git fetch followed by a git merge (or git
+rebase). It fetches the changes and then automatically applies them to your current local
+branch.
+
+Q3.What is the purpose of the staging area?
+
+The staging area (or Index) acts as a middle ground between the working directory (where you
+edit files) and the repository (where commits are stored). Its purpose is to let you carefully
+select and prepare specific changes (specific lines or files) for the next commit, allowing you
+to create small, focused, and meaningful snapshots of your work.
+  
+Q4.Which command unstages a file without deleting it from your working directory?
+
+Bashgit restore --staged <file_name>
+# or the older syntax: git reset HEAD <file_name>
+
+Q5.How does git revert differ from git reset?
+
+Feature         git revert                                          git reset
+
+Action           Creates a new commit that undoes the                Moves the branch pointer (HEAD) to a 
+                 changes of a specified commit.                      specified commit, effectively rewriting
+                                                                     history.
+
+HistorySafe      for shared history. It preserves the                Dangerous for shared history. It deletes
+                 original history and is non-destructive.             subsequent commits, rewriting history.
+
+Usage            Preferred method for undoing changes that            Used locally to clean up commits before
+                 have already been pushed to a shared                 pushing, or to completely discard local 
+                 remote.                                              changes.
+
+Q6.What steps would you take to invite a collaborator on GitHub?
+ 1.Navigate to your repository's page on GitHub.
+ 2.Click the Settings tab.
+ 3.In the left sidebar, click Collaborators and teams (or Manage access).
+ 4.Click the Add people button.
+ 5.Search for the collaborator by their GitHub username, full name, or email address.
+ 6.Click their name and click Add [username] to this repository.
+ 7.The person will receive an email invitation that they must accept.
+
+Q7.Which command lists all branches and shows the current one?
+
+Bashgit branch
+(The current branch will be highlighted or preceded by an asterisk *.)
+
+Q8.How do you check differences between your working directory and the last commit?
+
+Bashgit diff
+(This command shows changes in files that are not yet staged.)
+
+Q9.Why are meaningful commit messages important?
+
+Meaningful commit messages are crucial because they serve as a clear, concise record of why
+a change was made. They help collaborators and your future self:
+ 1.Understand Context: Quickly grasp the purpose of a commit without reviewing all the code.
+ 2.Facilitate Review: Make code reviews faster and more focused.
+ 3.Simplify History: Easily search and filter the project's history (e.g., finding when a specific bug was introduced).
+ 
+ 
+ Q10.What happens if you use git push without committing first?
+ 
+ If you run git push without any preceding commits, nothing will be pushed. Git will report that
+  your local branch is up to date with the remote branch because it only pushes committed 
+  snapshots. Any changes in your working directory or staging area are ignored by git push.
